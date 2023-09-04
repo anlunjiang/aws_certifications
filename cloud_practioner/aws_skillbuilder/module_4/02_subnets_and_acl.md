@@ -11,15 +11,19 @@ Reminder - VPCs are a isolated network where data can only come win through gate
 
 # Subnets
 To control access to the gateways. 
-* Public subnets have access to the internet gateway - private subnets do not
+* Public subnets have access to the internet gateway - so contain resources that need public access - like a website
+* Private subnets do not have IGW access - e.g. databases
 HOWEVER:
 * Subnets **also** can control traffic permissions
 
 ## ACL Access Control Lists
-When packets of data enter or exit a subnet boundary - it gets checked against an Network ACL. This check determines if a packet has the permission to leave or enter the subnet 
+When packets of data enter or exit a subnet boundary - it gets checked against an Network ACL - essentially a virtual firewall. This check determines if a packet has the permission to leave or enter the subnet 
 * This is based on
   * Who it was sent from
   * How it is trying to communicate
+ 
+
+ **By Default - NACLs allow all traffic in and out of the subnet**
 
 You can white list and black list IPs - just because packets are let in - does NOT mean packets can be let out 
 
@@ -38,5 +42,7 @@ Granularity goes Gateway (i/o of VPC) --> NACL (i/o of subnet) ---> SGs (i/o of 
 
 ## Differences between SGs and NACLs
 * Security Groups are STATEFUL
-* 
-
+ * Any packet that left already and comes back will be remembered by the SG 
+* NACLs are stateless - it remembers nothing
+ * checks every packet each time that wants to cross 
+ * Doesnt check the packet itself - just that the sender or receiver is on the approved list 
