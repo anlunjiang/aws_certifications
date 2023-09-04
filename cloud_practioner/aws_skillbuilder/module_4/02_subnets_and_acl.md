@@ -16,5 +16,27 @@ HOWEVER:
 * Subnets **also** can control traffic permissions
 
 ## ACL Access Control Lists
-When packets of data enter or exit a subnet boundary - it gets checked against an Network ACL. This check determines if 
+When packets of data enter or exit a subnet boundary - it gets checked against an Network ACL. This check determines if a packet has the permission to leave or enter the subnet 
+* This is based on
+  * Who it was sent from
+  * How it is trying to communicate
+
+You can white list and black list IPs - just because packets are let in - does NOT mean packets can be let out 
+
+NOTE: ACL only control whether a packet can enter a subnet or not - NOT if the packet can go to say, a particular instance of EC2. This is where **Security Groups** come into play 
+
+## Security Groups
+Every EC2 instance when launched comes with its own security group - and
+* By default - does not allow any traffic into the instance at all - all ports and IP addresses are blocked
+* SGs can be modified to accept specific types of traffic e.g. https traffic but not os traffic
+
+If NACLs are like passport control, SGs are like a doorman in a building - you can enter the subnet, but not everywhere in the subnet - its a finer control
+
+Granularity goes Gateway (i/o of VPC) --> NACL (i/o of subnet) ---> SGs (i/o of resource/instance)
+
+**BY DEFAULT - SGs all traffic is allowed out**
+
+## Differences between SGs and NACLs
+* Security Groups are STATEFUL
+* 
 
