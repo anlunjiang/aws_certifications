@@ -31,3 +31,9 @@
 * EC2 pricing has on demand and savings plan (which saves up to 72%)
   * Also applies to lambda and fargate
   * On-demand, savings, dedicated host (single tenancy), reserved instances, spot instances  
+
+
+
+
+**ebs is az only
+efs is regional**
