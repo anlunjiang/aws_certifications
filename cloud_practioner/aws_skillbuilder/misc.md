@@ -37,3 +37,6 @@
 
 **ebs is az only
 efs is regional**
+
+
+temp permissions - look for roles - not policies or groups
