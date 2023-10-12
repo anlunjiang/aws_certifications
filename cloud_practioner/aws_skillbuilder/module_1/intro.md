@@ -24,7 +24,7 @@ Takes the management and maintenance of your compute and db away, so you can foc
 Used when apps are better maintained on prem - or due to government regulations. 
 
 # Benefits of cloud computing
-* Trade upfront expense for variable expense
+* Trade upfront expense for lower variable expense
 * Stop spending money to run and maintain data centers
 * Stop guessing capacity
 * Massive economies of scale 

@@ -16,7 +16,7 @@ You can configure the:
 * Size up to 16tb each
 * Type - SSD by default but HDD option is available
 * Configuration 
-
+* encryped both root and non root volumes
 You can back up your data using **snapshots** - recommended to be taken regularly - this way all data is backed up. 
 Snapshots are incremental - meaning that the first backup takes all data - but subsequent backups only the blocks of data that changed since the most recent snapshot are saved
 
